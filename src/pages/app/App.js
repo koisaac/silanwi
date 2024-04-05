@@ -23,13 +23,13 @@ function App() {
 
             <header>
                 <div id={app.logo}>
-                    <a href="./메인.html">
+                    <Link to="/">
                         <img
                             src={process.env.PUBLIC_URL + "/img/lab_black.svg"}
                             alt={"Logo"}
                             width={"35%"}
                         />
-                    </a>
+                    </Link>
                 </div>
             </header>
             <main>
@@ -67,7 +67,12 @@ function App() {
                     </div>
                     <div className={app.button}>
                         <a href="./대여관리.html">
-                            <img src="../imgs/icons/borrow_text.svg" />
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    "/img/icons/borrow_text.svg"
+                                }
+                            />
                         </a>
                     </div>
                 </div>

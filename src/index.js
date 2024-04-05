@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./pages/app/App";
-import Lab from "./pages/lab/Header";
+import Lab from "./pages/lab/Lab";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
@@ -20,15 +20,8 @@ root.render(
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<App />}></Route>
-                    <Route path="/lab/physics" element={<PhysicsLab />}></Route>
-                    <Route
-                        path="/lab/chemistry"
-                        element={<ChemistryLab />}
-                    ></Route>
-                    <Route
-                        path="/lab/biognosy"
-                        element={<BiognosyLab />}
-                    ></Route>
+                    <Route path="/lab/:lap_name" element={<Lab />}></Route>
+
                     <Route path="*" element={<App />}></Route>
                 </Routes>
             </BrowserRouter>

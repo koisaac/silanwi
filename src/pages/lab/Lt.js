@@ -26,11 +26,11 @@ function Lt(probs) {
                 <article className={Lab.rule} id={Lab.ex_info}></article>
             </div>
             <div className={Lab.arrow}>
-                <a href="/">
+                <Link to="/">
                     <img
-                        src={process.env.PUBLIC_URL + "/imgs/icons/arrow.svg"}
+                        src={process.env.PUBLIC_URL + "/img/icons/arrow.svg"}
                     />
-                </a>
+                </Link>
             </div>
         </div>
     );

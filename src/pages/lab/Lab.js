@@ -3,20 +3,19 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import 화학실험실 from "./화학실험실.module.css";
 import Lt from "./Lt";
 import Footer from "./Footer";
 import Main from "./Main";
 
-function ChemistryLab() {
+function Lab() {
+    const { lap_name } = useParams();
     return (
         <div>
-            <Header LabName={"chemistry"} />
-            <Lt LabName={"chemistry"} />
-
-            <Main LabName={"chemistry"} />
+            <Header LabName={lap_name} />
+            <Lt LabName={lap_name} />
+            <Main LabName={lap_name} />
             <Footer />
         </div>
     );
 }
-export default ChemistryLab;
+export default Lab;
