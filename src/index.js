@@ -1,27 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import Lab from "./pages/Lab"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./pages/app/App";
+import Lab from "./pages/lab/Header";
 
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Router, Routes} from "react-router-dom"
-import Navigation from './Navigation';
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import Reservation from "./pages/reservation/Reservation";
+import { QueryClient, QueryClientProvider } from "react-query";
+import PhysicsLab from "./pages/lab/PhysicsLab";
+import ChemistryLab from "./pages/lab/ChemistryLab";
+import BiognosyLab from "./pages/lab/BiognosyLab";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <h1 className='App'>실안위 홈페이지 </h1>
-      <Navigation/> 
-      <Routes>
-        <Route path = "/" element ={<App/>}></Route>
-        <Route path='/lab/:lab_name' element = {<Lab/>}></Route>
-        <Route path='/lab/bac' element = {<App/>}></Route>
-        <Route path = '*' element = {<App/>}></Route>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App />}></Route>
+                    <Route path="/lab/physics" element={<PhysicsLab />}></Route>
+                    <Route
+                        path="/lab/chemistry"
+                        element={<ChemistryLab />}
+                    ></Route>
+                    <Route
+                        path="/lab/biognosy"
+                        element={<BiognosyLab />}
+                    ></Route>
+                    <Route path="*" element={<App />}></Route>
+                </Routes>
+            </BrowserRouter>
+        </QueryClientProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

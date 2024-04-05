@@ -1,0 +1,116 @@
+.map {
+    position: relative;
+    display: inline-block;
+    background: white;
+    border: 3%;
+    padding: 5%;
+    width: 80%;
+    border-radius: 30px;
+    text-align: center;
+    margin: 3% 0 3% 0;
+}
+
+.map #back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border: none;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    border-radius: 30px;
+    text-align: center;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.map img {
+    width: 100%;
+    height: 100%;
+}
+
+.map #room1 {
+    position: absolute;
+    top: 9.5%;
+    left: 6.3%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 53.6%;
+    height: 39.8%;
+    z-index: 2;
+}
+
+.map #room2 {
+    position: absolute;
+    top: 9.5%;
+    left: 60.6%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 33.1%;
+    height: 39.8%;
+    z-index: 2;
+}
+
+.map #room3 {
+    position: absolute;
+    top: 9.5%;
+    left: 60.6%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 17.8%;
+    height: 18.7%;
+    z-index: 4;
+}
+
+.map #room4 {
+    position: absolute;
+    top: 50.2%;
+    left: 6.3%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 33.2%;
+    height: 39.8%;
+    z-index: 2;
+}
+
+.map #back:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room1:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room2:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room3:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room4:hover {
+    opacity: 0.5;
+    color: black;
+}

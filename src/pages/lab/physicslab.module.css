@@ -1,0 +1,97 @@
+.map {
+    position: relative;
+    display: inline-block;
+    background: white;
+    border: 3%;
+    padding: 5%;
+    width: 80%;
+    border-radius: 30px;
+    text-align: center;
+    margin: 3% 0 3% 0;
+}
+
+.map #back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border: none;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    border-radius: 30px;
+    text-align: center;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.map img {
+    width: 100%;
+    height: 100%;
+}
+
+.map #room1 {
+    position: absolute;
+    top: 16.9%;
+    left: 6.1%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 45.2%;
+    height: 61%;
+    z-index: 2;
+}
+
+.map #room2 {
+    position: absolute;
+    top: 16.9%;
+    left: 51.8%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 27.8%;
+    height: 61%;
+    z-index: 2;
+}
+
+.map #room3 {
+    position: absolute;
+    top: 16.9%;
+    left: 80%;
+    transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    background-color: none;
+    opacity: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    width: 14%;
+    height: 61%;
+    z-index: 2;
+}
+
+.map #back:hover {
+    z-index: 2;
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room1:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room2:hover {
+    opacity: 0.5;
+    color: black;
+}
+
+.map #room3:hover {
+    opacity: 0.5;
+    color: black;
+}

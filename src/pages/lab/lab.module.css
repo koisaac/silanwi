@@ -1,0 +1,90 @@
+.body {
+    margin: 0;
+    font-family: "Nanum Gothic", sans-serif;
+    background-image: url("/public/img/비메인배경.png");
+    background-color: #f6f6f6;
+    background-repeat: repeat-y;
+    background-size: auto;
+}
+
+main {
+    text-align: center;
+}
+
+/* 상단 로고 */
+/*
+#logo{
+    margin: 2%;
+    margin-bottom: 1%;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr repeat(4,0.5fr) 7fr;
+    grid-column-gap: 10px;
+}
+*/
+
+#logo {
+    display: grid;
+    grid-template-columns: 2fr 0.1fr repeat(4, 0.7fr) 4fr 0.7fr;
+    grid-column-gap: 1%;
+    padding: 2%;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#loginbutton {
+    padding-top: 5%;
+    width: 80%;
+    height: 80%;
+}
+/*
+#logo img {
+    width: 120px;
+    height: 120px;
+}
+
+#logo #blogo img{
+    width: 350px;
+}
+*/
+
+/* 페이지 제목 */
+
+.lt {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 5fr 1fr;
+    text-align: center;
+    margin: 0;
+    grid-column-gap: 2%;
+    background: rgb(252, 252, 252);
+    border: 3%;
+    padding: 2%;
+    width: 86%;
+    border-radius: 30px;
+    margin: 2% 5% 0 5%;
+}
+
+.labmap {
+    width: 100%;
+    text-align: center;
+    margin: 7% 0 0 0;
+}
+
+.lt .rule {
+    text-align: left;
+    font-size: 17px;
+}
+
+.labmap img {
+    width: 80%;
+}
+
+.arrow img {
+    margin-top: 6%;
+    width: 60%;
+}
+#info_window {
+    padding: 2%;
+}
