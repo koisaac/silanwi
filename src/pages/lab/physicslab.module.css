@@ -36,7 +36,7 @@
     left: 6.1%;
     transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
     background-color: none;
-    opacity: 0.5;
+    opacity: 0;
     padding: 10px 20px;
     cursor: pointer;
     border: none;
@@ -50,7 +50,7 @@
     top: 16.9%;
     left: 51.8%;
     transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
-    opacity: 0.5;
+    opacity: 0;
     padding: 10px 20px;
     cursor: pointer;
     border: none;
@@ -64,7 +64,7 @@
     top: 16.9%;
     left: 80%;
     transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
-    opacity: 0.5;
+    opacity: 0;
     padding: 10px 20px;
     cursor: pointer;
     border: none;
