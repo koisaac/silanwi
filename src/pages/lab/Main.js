@@ -8,7 +8,9 @@ import physicslab from "./physicslab.module.css";
 import lab from "./lab.module.css";
 
 const api_call_Device = async (labname) => {
-    var data = await fetch("/api/test/" + labname);
+    var data = await fetch(
+        "https://jshs-project.duckdns.org:8080/test/" + labname
+    );
     var data_json = await data.json();
     return data_json;
 };
