@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import lab from "./lab.module.css";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
 const __lap_name__ = {

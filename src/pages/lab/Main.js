@@ -1,11 +1,131 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import 생명실험실 from "./생명실험실.module.css";
 import 화학실험실 from "./화학실험실.module.css";
 import physicslab from "./physicslab.module.css";
+import lab from "./lab.module.css";
+
+const api_call_Device = async (labname) => {
+    var data = await fetch("http://jshs-project.duckdns.org/test/" + labname);
+    var data_json = await data.json();
+    return data_json;
+};
+
+function Box(probs) {
+    const [fontSize, setfontSize] = useState({
+        tit1: "0px",
+        tit2: "0px",
+        rental: "0px",
+    });
+    const [box_size, setBoxSize] = useState(0);
+    const tit1Ref = useRef(null);
+    const tit2Ref = useRef(null);
+    const rentalRef = useRef(null);
+    const equipRef = useRef(null);
+    useEffect(() => {
+        const handleResize = () => {
+            const tit1_size = tit1Ref?.current.offsetWidth || 0;
+            const tit2_size = tit2Ref?.current.offsetWidth || 0;
+            const renatal_size = rentalRef?.current.offsetWidth || 0;
+            setfontSize({
+                tit1: tit1_size * 0.108,
+                tit2: tit2_size * 0.15,
+                rental: renatal_size * 0.25,
+            });
+            setBoxSize((equipRef?.current.offsetWidth || 0) * 1.18);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    const box = (
+        <li
+            ref={equipRef}
+            key={probs.device.id}
+            className={lab.equip}
+            style={{ height: box_size }}
+        >
+            <div className={lab.default}>
+                <img src={process.env.PUBLIC_URL + "/img/300x200.jpg"} />
+                <div
+                    className={lab.tit1}
+                    ref={tit1Ref}
+                    style={{ fontSize: fontSize.tit1 }}
+                >
+                    <strong>{probs.device.device_name}</strong>
+                </div>
+            </div>
+            <div className={lab.hovered}>
+                <div
+                    className={lab.tit2}
+                    ref={tit2Ref}
+                    style={{ fontSize: fontSize.tit2 }}
+                >
+                    <strong>{probs.device.device_name}</strong>
+                </div>
+                <a href="./기구상세페이지.html">
+                    <button
+                        className={lab.rental}
+                        ref={rentalRef}
+                        style={{ fontSize: fontSize.rental }}
+                    >
+                        정 보
+                    </button>
+                </a>
+            </div>
+        </li>
+    );
+
+    return (
+        <li
+            ref={equipRef}
+            key={probs.device.id}
+            className={lab.equip}
+            style={{
+                height: box_size,
+                display:
+                    probs.location == "room0" ||
+                    probs.location == probs.device.location_2
+                        ? "inline-block"
+                        : "none",
+            }}
+        >
+            <div className={lab.default}>
+                <img src={process.env.PUBLIC_URL + "/img/300x200.jpg"} />
+                <div
+                    className={lab.tit1}
+                    ref={tit1Ref}
+                    style={{ fontSize: fontSize.tit1 }}
+                >
+                    <strong>{probs.device.device_name}</strong>
+                </div>
+            </div>
+            <div className={lab.hovered}>
+                <div
+                    className={lab.tit2}
+                    ref={tit2Ref}
+                    style={{ fontSize: fontSize.tit2 }}
+                >
+                    <strong>{probs.device.device_name}</strong>
+                </div>
+                <a href="./기구상세페이지.html">
+                    <button
+                        className={lab.rental}
+                        ref={rentalRef}
+                        style={{ fontSize: fontSize.rental }}
+                    >
+                        정 보
+                    </button>
+                </a>
+            </div>
+        </li>
+    );
+}
 
 function Main(probs) {
     const lap_name = {
@@ -13,7 +133,20 @@ function Main(probs) {
         physics: "물리",
         biognosy: "생실",
     };
-    console.log(probs.LabName);
+    const [device_list, setDeviceList] = useState([]);
+    const [location, setLocation] = useState("room0");
+
+    const init_set = async (labname) => {
+        var data = await api_call_Device(labname);
+        setDeviceList(data);
+    };
+
+    useEffect(() => {
+        setLocation("room0");
+        init_set(probs.LabName);
+    }, [probs.LabName]);
+
+    console.log(device_list);
     return (
         <div>
             <div
@@ -26,6 +159,7 @@ function Main(probs) {
                 }
             >
                 <div
+                    onClick={() => setLocation("room0")}
                     id={
                         probs.LabName == "physics"
                             ? physicslab.back
@@ -43,6 +177,10 @@ function Main(probs) {
                     }
                 />
                 <button
+                    style={{
+                        backgroundColor: location == "room1" ? "red" : "",
+                    }}
+                    onClick={() => setLocation("room1")}
                     id={
                         probs.LabName == "physics"
                             ? physicslab.room1
@@ -52,6 +190,10 @@ function Main(probs) {
                     }
                 ></button>
                 <button
+                    style={{
+                        backgroundColor: location == "room2" ? "red" : "",
+                    }}
+                    onClick={() => setLocation("room2")}
                     id={
                         probs.LabName == "physics"
                             ? physicslab.room2
@@ -61,6 +203,10 @@ function Main(probs) {
                     }
                 ></button>
                 <button
+                    style={{
+                        backgroundColor: location == "room3" ? "red" : "",
+                    }}
+                    onClick={() => setLocation("room3")}
                     id={
                         probs.LabName == "physics"
                             ? physicslab.room3
@@ -73,6 +219,10 @@ function Main(probs) {
                     <></>
                 ) : (
                     <button
+                        style={{
+                            backgroundColor: location == "room4" ? "red" : "",
+                        }}
+                        onClick={() => setLocation("room4")}
                         id={
                             probs.LabName == "chemistry"
                                 ? 화학실험실.room4
@@ -80,6 +230,19 @@ function Main(probs) {
                         }
                     ></button>
                 )}
+            </div>
+            <div className={lab.box}>
+                <ul>
+                    {device_list.map((device) => {
+                        return (
+                            <Box
+                                key={device.id}
+                                device={device}
+                                location={location}
+                            />
+                        );
+                    })}
+                </ul>
             </div>
         </div>
     );

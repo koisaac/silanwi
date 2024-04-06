@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Lt from "./Lt";
@@ -14,7 +13,6 @@ function Lab() {
             <Header LabName={lap_name} />
             <Lt LabName={lap_name} />
             <Main LabName={lap_name} />
-            <Footer />
         </div>
     );
 }

@@ -49,6 +49,95 @@ main {
 }
 */
 
+.box {
+    display: inline-block;
+    background: rgb(252, 252, 252);
+    border: 3%;
+    padding: 1%;
+    width: 90%;
+
+    border-radius: 30px;
+    padding: 0;
+    text-align: left;
+}
+
+.box ul {
+    padding: 0;
+    margin: 0 1.5% 4% 0;
+}
+
+.box .equip {
+    width: 20%;
+    border: none;
+    list-style: none;
+    max-width: 100%;
+    margin: 4% 0 0 4%;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.equip .default {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #d8dff0;
+    float: left;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.equip .hovered {
+    background-color: #bed3ee;
+    float: left;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.equip:hover .hovered {
+    top: 0;
+}
+
+.default img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 88%;
+    height: 75%;
+    overflow: hidden;
+    margin: 6% auto 0;
+}
+
+.default .tit1 {
+    position: relative;
+    margin: 4% 0 0 0;
+    font-size: 8px;
+}
+
+.hovered .tit2 {
+    position: relative;
+    margin: 30% 0 35% 0;
+    font-size: 28px;
+    color: white;
+}
+
+.hovered .rental {
+    background-color: #b4b7fa;
+    border: none;
+    width: 30%;
+    height: 15%;
+    cursor: pointer;
+    border-radius: 15%;
+    color: white;
+    margin: 1% auto;
+}
+
 /* 페이지 제목 */
 
 .lt {
