@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Header from "./Header";
 import 생명실험실 from "./생명실험실.module.css";
 import 화학실험실 from "./화학실험실.module.css";
 import physicslab from "./physicslab.module.css";
 import lab from "./lab.module.css";
+import { Link } from "react-router-dom";
 
 const api_call_Device = async (labname) => {
     var data = await fetch(
@@ -26,6 +24,7 @@ function Box(probs) {
     const tit2Ref = useRef(null);
     const rentalRef = useRef(null);
     const equipRef = useRef(null);
+
     useEffect(() => {
         const handleResize = () => {
             const tit1_size = tit1Ref?.current.offsetWidth || 0;
@@ -44,44 +43,6 @@ function Box(probs) {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-
-    const box = (
-        <li
-            ref={equipRef}
-            key={probs.device.id}
-            className={lab.equip}
-            style={{ height: box_size }}
-        >
-            <div className={lab.default}>
-                <img src={process.env.PUBLIC_URL + "/img/300x200.jpg"} />
-                <div
-                    className={lab.tit1}
-                    ref={tit1Ref}
-                    style={{ fontSize: fontSize.tit1 }}
-                >
-                    <strong>{probs.device.device_name}</strong>
-                </div>
-            </div>
-            <div className={lab.hovered}>
-                <div
-                    className={lab.tit2}
-                    ref={tit2Ref}
-                    style={{ fontSize: fontSize.tit2 }}
-                >
-                    <strong>{probs.device.device_name}</strong>
-                </div>
-                <a href="./기구상세페이지.html">
-                    <button
-                        className={lab.rental}
-                        ref={rentalRef}
-                        style={{ fontSize: fontSize.rental }}
-                    >
-                        정 보
-                    </button>
-                </a>
-            </div>
-        </li>
-    );
 
     return (
         <li
@@ -115,7 +76,7 @@ function Box(probs) {
                 >
                     <strong>{probs.device.device_name}</strong>
                 </div>
-                <a href="./기구상세페이지.html">
+                <Link to={"/device_info/" + probs.device.id}>
                     <button
                         className={lab.rental}
                         ref={rentalRef}
@@ -123,7 +84,7 @@ function Box(probs) {
                     >
                         정 보
                     </button>
-                </a>
+                </Link>
             </div>
         </li>
     );
