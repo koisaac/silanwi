@@ -142,6 +142,7 @@ function Main(probs) {
                 <button
                     style={{
                         backgroundColor: location == "room1" ? "red" : "",
+                        opacity: 0.3,
                     }}
                     onClick={() => setLocation("room1")}
                     id={
@@ -155,6 +156,7 @@ function Main(probs) {
                 <button
                     style={{
                         backgroundColor: location == "room2" ? "red" : "",
+                        opacity: 0.3,
                     }}
                     onClick={() => setLocation("room2")}
                     id={
@@ -168,6 +170,7 @@ function Main(probs) {
                 <button
                     style={{
                         backgroundColor: location == "room3" ? "red" : "",
+                        opacity: 0.3,
                     }}
                     onClick={() => setLocation("room3")}
                     id={
@@ -184,6 +187,7 @@ function Main(probs) {
                     <button
                         style={{
                             backgroundColor: location == "room4" ? "red" : "",
+                            opacity: 0.3,
                         }}
                         onClick={() => setLocation("room4")}
                         id={
