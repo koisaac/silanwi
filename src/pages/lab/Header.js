@@ -8,6 +8,7 @@ const __lap_name__ = {
     biognosy: "생명과학실",
     physics: "물리실",
     earthscience: "지구과학실",
+    borrow: "대여",
 };
 
 function Header(probs) {
@@ -72,15 +73,17 @@ function Header(probs) {
                         </Link>
                     </div>
                     <div>
-                        <a href="./대여관리.html">
+                        <Link to="/rental">
                             <img
                                 src={
                                     process.env.PUBLIC_URL +
-                                    "/img/icons/borrow.svg"
+                                    "/img/icons/borrow" +
+                                    (lab_name == "borrow" ? "_line" : "") +
+                                    ".svg"
                                 }
                                 alt={"예약하기"}
                             />
-                        </a>
+                        </Link>
                     </div>
                     <div></div>
                     <div

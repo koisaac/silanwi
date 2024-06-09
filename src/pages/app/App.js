@@ -66,14 +66,14 @@ function App() {
                         </Link>
                     </div>
                     <div className={app.button}>
-                        <a href="./대여관리.html">
+                        <Link to="/rental">
                             <img
                                 src={
                                     process.env.PUBLIC_URL +
                                     "/img/icons/borrow_text.svg"
                                 }
                             />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </main>

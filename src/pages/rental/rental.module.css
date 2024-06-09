@@ -1,0 +1,154 @@
+main {
+    text-align: center;
+}
+
+/* 상단 로고 */
+
+#logo {
+    display: grid;
+    grid-template-columns: 2fr 0.1fr repeat(4, 0.7fr) 4fr 0.7fr;
+    grid-column-gap: 1%;
+    padding: 2%;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#loginbutton {
+    padding-top: 5%;
+    width: 80%;
+    height: 80%;
+}
+
+/* 페이지 제목 */
+
+.lt {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 5fr 1fr;
+    text-align: center;
+    margin: 0;
+    grid-column-gap: 2%;
+    background: rgb(252, 252, 252);
+    border: 3%;
+    padding: 2%;
+    width: 86%;
+    border-radius: 30px;
+    margin: 2% 5% 0 5%;
+}
+
+.labmap {
+    width: 100%;
+    text-align: center;
+    display: table;
+    margin: 7% 0 0 0;
+}
+
+.lt .rule {
+    text-align: left;
+    font-size: 17px;
+}
+
+.labmap img {
+    width: 80%;
+}
+
+.arrow img {
+    margin-top: 6%;
+    width: 60%;
+}
+
+/* 박스 */
+
+.box {
+    display: inline-block;
+    background: white;
+    border: 3%;
+    padding: 1%;
+    width: 90%;
+    height: 5000px;
+    border-radius: 30px;
+    padding: 0;
+    text-align: left;
+    margin: 3% 0 3% 0;
+}
+
+/* 테이블 */
+
+.maintable {
+    width: 95%;
+    margin: 2% 2.5% 2% 2.5%;
+    text-align: center;
+    border-spacing: 0.5em;
+}
+
+.maintable thead {
+    display: table-header-group;
+    vertical-align: middle;
+}
+
+.maintable tr {
+    display: table-row;
+}
+
+.maintable th {
+    display: table-cell;
+    width: 20%;
+    height: 45px;
+    background-color: #f2b099;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+.maintable th:first-child,
+.maintable td:first-child {
+    width: 20%;
+}
+
+.maintable th:nth-child(2),
+.maintable td:nth-child(2) {
+    width: 10%;
+}
+
+.maintable th:nth-child(3),
+.maintable td:nth-child(3) {
+    width: 10%;
+}
+
+.maintable th:nth-child(4),
+.maintable td:nth-child(4) {
+    width: 6%;
+}
+
+.maintable th:nth-child(5),
+.maintable td:nth-child(5) {
+    width: 6%;
+}
+
+.maintable tbody {
+    display: table-row-group;
+}
+
+.maintable .c {
+    display: table-cell;
+    width: 20%;
+    height: 1.5em;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.maintable .n {
+    display: table-cell;
+    width: 20%;
+    height: 1.5em;
+    background-color: #ffcc93;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#info_window {
+    padding-left: 2%;
+}

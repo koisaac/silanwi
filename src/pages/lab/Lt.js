@@ -16,6 +16,7 @@ function Lt(probs) {
         chemistry: "화학실험실",
         biognosy: "생명실험실",
         physics: "물리실험실",
+        borrow: "기구시약대여",
     };
     const [fontSize, setfontSize] = useState("0px");
     const anchorRef = useRef(null);
