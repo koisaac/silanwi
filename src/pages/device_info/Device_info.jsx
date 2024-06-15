@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 async function api_call_Device(id) {
     var response = await fetch(
-        "https://jshs-project.duckdns.org:8080/device_info/" + id
+        "https://labour.jshs-project.duckdns.org/device_info/" + id
     );
     var data = await response.json();
     return data;
@@ -24,6 +24,7 @@ function Device_info() {
         var data = await api_call_Device(device_id);
         setDeviceInfo(data[0]);
     };
+
     useEffect(() => {
         init_set(id);
     }, [id]);
@@ -73,6 +74,7 @@ function Device_info() {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
     return (
         <div>
             <Header />
