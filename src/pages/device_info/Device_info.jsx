@@ -5,7 +5,6 @@ import Footer from "../lab/Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
 async function api_call_Device(id) {
     var response = await fetch(
         "https://labour.jshs-project.duckdns.org/device_info/" + id
