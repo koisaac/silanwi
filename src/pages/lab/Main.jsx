@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const api_call_Device = async (labname) => {
     var data = await fetch(
-        "https://jshs-project.duckdns.org:8080/test/" + labname
+        "https://labour.jshs-project.duckdns.org/test/" + labname
     );
     var data_json = await data.json();
     return data_json;
