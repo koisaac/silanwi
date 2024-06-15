@@ -140,7 +140,7 @@ function Device_info() {
                                     height: img_size.height,
                                 }}
                                 src={
-                                    "https://jshs-project.duckdns.org:8080/public/광학현미경.png"
+                                    "https://labour.jshs-project.duckdns.org/public/광학현미경.png"
                                 }
                                 alt="생명과학 실험실 UV-VIS 분광광도계"
                             />
