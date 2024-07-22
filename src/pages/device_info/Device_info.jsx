@@ -21,6 +21,7 @@ function Device_info() {
     const [device_info, setDeviceInfo] = useState({});
     const init_set = async (device_id) => {
         var data = await api_call_Device(device_id);
+        console.log(data);
         setDeviceInfo(data[0]);
         console.log(device_info);
     };
