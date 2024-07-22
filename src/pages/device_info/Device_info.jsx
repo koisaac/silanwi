@@ -22,6 +22,7 @@ function Device_info() {
     const init_set = async (device_id) => {
         var data = await api_call_Device(device_id);
         setDeviceInfo(data[0]);
+        console.log(device_info);
     };
 
     useEffect(() => {
