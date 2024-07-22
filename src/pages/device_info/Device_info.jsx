@@ -114,7 +114,8 @@ function Device_info() {
                             style={{ fontSize: fontSize.left }}
                             className={device_info_style.left}
                         >
-                            5/50 남음
+                            {device_info.ReservedCount}/{device_info.number}{" "}
+                            남음
                         </div>
                         <div></div>
                     </div>
