@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import Header from "../utill/Header";
 import Lt from "./Lt";
-import Footer from "./Footer";
+import Footer from "../utill/Footer";
 import Main from "./Main";
 
 function Lab() {

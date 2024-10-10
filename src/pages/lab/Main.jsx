@@ -98,9 +98,11 @@ function Main(probs) {
     };
     const [device_list, setDeviceList] = useState([]);
     const [location, setLocation] = useState("room0");
-
+    const [Loding, setLoding] = useState(true);
     const init_set = async (labname) => {
+        setLoding(true);
         var data = await api_call_Device(labname);
+        setLoding(false);
         setDeviceList(data);
     };
 
@@ -199,17 +201,21 @@ function Main(probs) {
                 )}
             </div>
             <div className={lab.box}>
-                <ul>
-                    {device_list.map((device) => {
-                        return (
-                            <Box
-                                key={device.id}
-                                device={device}
-                                location={location}
-                            />
-                        );
-                    })}
-                </ul>
+                {Loding ? (
+                    <>Loding</>
+                ) : (
+                    <ul>
+                        {device_list.map((device) => {
+                            return (
+                                <Box
+                                    key={device.id}
+                                    device={device}
+                                    location={location}
+                                />
+                            );
+                        })}
+                    </ul>
+                )}
             </div>
         </div>
     );

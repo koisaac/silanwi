@@ -1,6 +1,6 @@
 import device_info_style from "./device_info.module.css";
-import Header from "../lab/Header";
-import Footer from "../lab/Footer";
+import Header from "../utill/Header";
+import Footer from "../utill/Footer";
 
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
@@ -19,11 +19,12 @@ function Device_info() {
     }, []);
     const { id } = useParams();
     const [device_info, setDeviceInfo] = useState({});
+    const [img_exp, setImg_exp] = useState("");
     const init_set = async (device_id) => {
         var data = await api_call_Device(device_id);
         console.log(data);
         setDeviceInfo(data[0]);
-        console.log(device_info);
+        setImg_exp(device_info.location + " " + data[0].device_name);
     };
 
     useEffect(() => {
@@ -102,7 +103,7 @@ function Device_info() {
                     </div>
 
                     <div className={device_info_style.down}>
-                        <a href="대여사이트.html?name=UV-vis_분광광도계">
+                        <Link to="/rental_page">
                             <div
                                 ref={rentRef}
                                 style={{ fontSize: fontSize.rent }}
@@ -110,7 +111,7 @@ function Device_info() {
                             >
                                 대여
                             </div>
-                        </a>
+                        </Link>
                         <div
                             ref={leftRef}
                             style={{ fontSize: fontSize.left }}
@@ -144,7 +145,7 @@ function Device_info() {
                                 src={
                                     "https://labour.jshs-project.duckdns.org/public/광학현미경.png"
                                 }
-                                alt="생명과학 실험실 UV-VIS 분광광도계"
+                                alt={img_exp}
                             />
                         </div>
                         <div className={device_info_style.main_text}>

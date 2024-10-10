@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import Header from "../utill/Header";
 import Lab from "./lab.module.css";
 
 let rules = [

@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    font-family: "Nanum Gothic", sans-serif;
+    background-image: url("/public/img/비메인배경.png");
+    background-color: #f6f6f6;
+    background-repeat: repeat-y;
+    background-size: auto;
+}
+
+main {
+    text-align: center;
+}
+
+/* 상단 로고 */
+/*
+#logo{
+    margin: 2%;
+    margin-bottom: 1%;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr repeat(4,0.5fr) 7fr;
+    grid-column-gap: 10px;
+}
+*/
+
+#logo {
+    display: grid;
+    grid-template-columns: 2fr 0.1fr repeat(4, 0.7fr) 4fr 0.7fr;
+    grid-column-gap: 1%;
+    padding: 2%;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#loginbutton {
+    padding-top: 5%;
+    width: 80%;
+    height: 80%;
+}
+
+/*
+#logo img {
+    width: 120px;
+    height: 120px;
+}
+
+#logo #blogo img{
+    width: 350px;
+}
+*/
+
+/* 페이지 제목 */
+
+.lt {
+    position: relative;
+    margin: 0;
+    background: rgb(252, 252, 252);
+    border: 3%;
+    padding: 2%;
+    width: 86%;
+    height: 20%;
+    border-radius: 30px;
+    margin: 2% 5% 3% 5%;
+}
+
+.lt .mlt {
+    display: grid;
+    grid-template-columns: 6fr 3fr 1fr;
+}
+
+.lt .mlt .labmap {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+.lt .mlt .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lt .mlt .arrow img {
+    width: 70%;
+}
+
+.lt .mlt .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    height: 80%;
+    background-color: #ffaf57;
+    border-radius: 15px;
+    margin: 3% 0 0 20%;
+    color: white;
+}
+
+/* 박스 */
+
+.box {
+    display: inline-block;
+    position: relative;
+    background: white;
+    border: 3%;
+    padding: 5%;
+    width: 90%;
+    border-radius: 30px;
+    padding: 0;
+    text-align: left;
+}
+
+.box .box_detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 5%;
+}
+
+.box .box_detail #equipt_img img {
+    position: absolute;
+    top: 3.8em;
+    right: 3.8em;
+    border: 2px solid #ffaf57;
+    border-radius: 20px;
+}
+
+.box .box_detail .list_box {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 1% 3% 1% 3%;
+    height: 100%;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+}
+
+.box .list_box ol {
+    margin: 0;
+}
+
+.box .box_detail .list_outbox {
+    margin-bottom: 7%;
+}
+
+.main_text h1 {
+    margin: 4% 0 4% 0;
+}
+
+.main_text p {
+    letter-spacing: 0.5px;
+    line-height: 150%;
+}
+.main_text .waytouse {
+    width: 110%;
+    height: 100%;
+}
+
+#info_window {
+    padding: 2%;
+}
