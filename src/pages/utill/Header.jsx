@@ -107,7 +107,7 @@ function Header(probs) {
                         id={lab.loginbutton}
                         style={{ float: "right", display: "block" }}
                     >
-                        <a href="javascript:void(0);" onClick={call}>
+                        <a href="https://labour.jshs-project.duckdns.org/auths">
                             <img
                                 src={
                                     process.env.PUBLIC_URL +
