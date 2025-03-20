@@ -24,7 +24,7 @@ jobs:
           SERVER_IP: ${{ secrets.SSH_HOST }}
           APP_DIR: ${{ secrets.WORK_DIR }}
         run: |
-          ssh -o StrictHostKeyChecking=no -o -p 9988 $SERVER_USER@$SERVER_IP "
+          ssh -o StrictHostKeyChecking=no -p 9988 $SERVER_USER@$SERVER_IP "
           cd $APP_DIR &&
           git remote set-url origin https://github.com/koisaac/silanwi.git &&
           git pull origin main &&
