@@ -13,6 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+
         
       - name: Add SSH private key to agent
         uses: webfactory/ssh-agent@v0.5.3
@@ -24,13 +25,11 @@ jobs:
           SERVER_USER: ${{ secrets.SSH_USER }}
           SERVER_IP: ${{ secrets.SSH_HOST }}
           APP_DIR: ${{ secrets.WORK_DIR }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.14.0'  # Ensure this matches your local Node.js version
-      - run: |
+        run: |
           ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=~/.ssh/known_hosts -p 9988 $SERVER_USER@$SERVER_IP "
           cd $APP_DIR &&
           git remote set-url origin https://github.com/koisaac/silanwi.git &&
           git pull origin main &&
-          node -v
+          node install &&
+          node run build
           "
