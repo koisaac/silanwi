@@ -31,5 +31,5 @@ jobs:
           git remote set-url origin https://github.com/koisaac/silanwi.git &&
           git pull origin main &&
           npm install &&
-          node run build
+          npm run build
           "
