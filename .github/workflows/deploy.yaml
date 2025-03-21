@@ -30,6 +30,6 @@ jobs:
           cd $APP_DIR &&
           git remote set-url origin https://github.com/koisaac/silanwi.git &&
           git pull origin main &&
-          node install &&
+          npm install &&
           node run build
           "
