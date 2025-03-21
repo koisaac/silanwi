@@ -6,23 +6,6 @@ on:
       - main  # Change to your main branch
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.14.0'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
   deploy:
     runs-on: ubuntu-latest
 
@@ -45,10 +28,5 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=~/.ssh/known_hosts -p 9988 $SERVER_USER@$SERVER_IP "
           cd $APP_DIR &&
-          git remote set-url origin https://github.com/koisaac/silanwi.git &&
-          git pull origin main &&
-          node -v &&
-          npm -v &&
-          npm install &&
-          npm run build
+          ./build.sh
           "
